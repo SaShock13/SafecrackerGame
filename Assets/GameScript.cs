@@ -21,7 +21,15 @@ public class GameScript : MonoBehaviour
 
     [SerializeField]
     TMP_Text combinationText;
+
+    [SerializeField]
+    AudioSource fanfar;
     
+
+
+    [SerializeField]
+    TimerScript timer;
+
 
     int pin1Num = 0;
     int pin2Num = 7;
@@ -97,7 +105,9 @@ public class GameScript : MonoBehaviour
     void WinCanvasShow()
     {
         gameWinCanvas.enabled = true;
+        timer.StopTimer();
         gameCanvas.enabled = false;
+        fanfar.Play();
 
     }
     /// Изменяет пины и корректирует при необходимости
@@ -121,5 +131,14 @@ public class GameScript : MonoBehaviour
         firstPinNumText.text = pin1Num.ToString();
         secondPinNumText.text = pin2Num.ToString();
         thirdPinNumText.text = pin3Num.ToString();
+    }
+    public void ResetGame()
+    {
+        pin1Num = 0;
+        pin2Num = 7;
+        pin3Num = 8;
+        UpdatePins();
+        gameWinCanvas.enabled = false;
+        gameCanvas.enabled = true;
     }
 }

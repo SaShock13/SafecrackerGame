@@ -13,13 +13,19 @@ public class TimerScript : MonoBehaviour
     
     [SerializeField]
     Canvas gameOverCanvas;
-    
 
+    [SerializeField]
+    AudioSource looseSound;
 
-    double timerTime =30;
+    bool isWon=false;
+
+    [SerializeField]
+    double initialTimerTime = 10; //начальное время таймера
+
+    double timerTime;
     void Start()
     {
-       
+        timerTime = initialTimerTime;
         gameCanvas.enabled = true;
         gameOverCanvas.enabled = false;
         timerText.text = timerTime.ToString();
@@ -28,18 +34,40 @@ public class TimerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (timerTime > 0)
+        if (!isWon)
         {
-            timerTime -= Time.deltaTime;
-            //timerText.text = System.Math.Round(timerTime, 3).ToString();
-            timerText.text = timerTime.ToString("#.#");
-        }
-        else 
-        {
-            gameOverCanvas.enabled = true;
-            gameCanvas.enabled = false;
+
+            if (timerTime > 0)
+            {
+                timerTime -= Time.deltaTime;
+                timerText.text = timerTime.ToString("#.#");
+            }
+            else 
+            {
+                
+                StopTimer();
+                gameOverCanvas.enabled = true;
+                gameCanvas.enabled = false;
+                looseSound.Play();
             
+            }
+            
+
         }
+
+    }
+    public void ResetTimer()
+    {
+        gameOverCanvas.enabled=false;
+        timerTime = initialTimerTime;
+        timerText.text = timerTime.ToString();
+        isWon = false;
     }
     
+
+    public void StopTimer()
+    {
+        timerTime = 0;
+        isWon = true;
+    }
 }
