@@ -46,6 +46,7 @@ public class GameScript : MonoBehaviour
     void Start()
     {   
         UpdatePins();
+
         combination = new int[] { 7, 7, 7 };
         combinationText.text = $"Верная комбинция : {combination[0]} - {combination[1]} - {combination[2]}";
     }
@@ -67,34 +68,33 @@ public class GameScript : MonoBehaviour
                 UseSceletonKey(p1,p2,p3);
                 break;
         }
+
         UpdatePins();
+
         if (pin1Num == combination[0] & pin2Num == combination[1] & pin3Num == combination[2])
         {
             Invoke("WinCanvasShow", 0.5f);
-
-
         }
     }
+
     public void UseHammer(int pin1,int pin2,int pin3)
     {
         pin1Num = pin1 + hammer1;
         pin2Num = pin2  + hammer2;
-        pin3Num = pin3+ hammer3;
-        
+        pin3Num = pin3+ hammer3;        
     }
+
     public void UseSceletonKey(int pin1, int pin2, int pin3)
     {
         pin1Num = pin1 + SceletonKey1;
         pin2Num = pin2 + SceletonKey2;
-        pin3Num = pin3 + SceletonKey3;
-        
+        pin3Num = pin3 + SceletonKey3;        
     }
     public void UseDrill(int pin1, int pin2, int pin3)
     {
         pin1Num = pin1 + drill1;
         pin2Num = pin2 + drill2;
-        pin3Num = pin3 + drill3;
-        
+        pin3Num = pin3 + drill3;        
     }
 
     #region Old Code
@@ -154,7 +154,6 @@ public class GameScript : MonoBehaviour
         gameWinCanvas.enabled = true;
         gameCanvas.enabled = false;
         fanfar.Play();
-
     }
    
 
@@ -170,7 +169,9 @@ public class GameScript : MonoBehaviour
         pin1Num = 0;
         pin2Num = 7;
         pin3Num = 8;
+
         UpdatePins();
+
         gameWinCanvas.enabled = false;
         gameCanvas.enabled = true;
     }
