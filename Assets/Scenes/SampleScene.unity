@@ -212,8 +212,8 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1555938968}
         m_TargetAssemblyTypeName: GameScript, Assembly-CSharp
-        m_MethodName: UseDrill
-        m_Mode: 1
+        m_MethodName: UseInstrument
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -542,7 +542,7 @@ GameObject:
   - component: {fileID: 202810832}
   - component: {fileID: 202810831}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: CorrectSequenceText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3055,7 +3055,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1381608367}
-  m_Enabled: 0
+  m_Enabled: 1
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -3586,12 +3586,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1555938968}
         m_TargetAssemblyTypeName: GameScript, Assembly-CSharp
-        m_MethodName: UseHammer
-        m_Mode: 1
+        m_MethodName: UseInstrument
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 1
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -3805,7 +3805,7 @@ MonoBehaviour:
   gameCanvas: {fileID: 1381608370}
   gameOverCanvas: {fileID: 2138365714}
   looseSound: {fileID: 1926802972}
-  initialTimerTime: 10
+  initialTimerTime: 120
 --- !u!4 &1688343675
 Transform:
   m_ObjectHideFlags: 0
@@ -4914,7 +4914,7 @@ Canvas:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2138365711}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_RenderMode: 0
   m_Camera: {fileID: 0}
@@ -5041,12 +5041,12 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1555938968}
         m_TargetAssemblyTypeName: GameScript, Assembly-CSharp
-        m_MethodName: UseSceletonKey
-        m_Mode: 1
+        m_MethodName: UseInstrument
+        m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
+          m_IntArgument: 2
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0

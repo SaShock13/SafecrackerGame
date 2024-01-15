@@ -20,7 +20,7 @@ public class TimerScript : MonoBehaviour
     bool isWon=false;
 
     [SerializeField]
-    double initialTimerTime = 10; //начальное время таймера
+    double initialTimerTime = 120; //начальное время таймера
 
     double timerTime;
     void Start()
@@ -67,7 +67,7 @@ public class TimerScript : MonoBehaviour
 
     public void StopTimer()
     {
-        timerTime = 0;
         isWon = true;
+        timerTime = 0;
     }
 }
